@@ -52,7 +52,7 @@ export default function FloatingWidgets({ websiteData }) {
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ type: 'spring', stiffness: 260, damping: 20, delay: 0.1 }}
-        href={`tel:${(contactData.phone1 || '+919932988615').replace(/\s+/g, '')}`}
+        href="tel:+917001981725"
         className="w-12 h-12 rounded-full bg-gradient-to-br from-brand-orange to-brand-orangeDark text-white shadow-glow-orange flex items-center justify-center border border-brand-orangeLight/20 transition-all duration-300 hover:scale-105 hover:-translate-y-1"
         aria-label="Call Helpline"
       >
@@ -64,7 +64,7 @@ export default function FloatingWidgets({ websiteData }) {
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ type: 'spring', stiffness: 260, damping: 20, delay: 0.2 }}
-        href={`https://wa.me/${(contactData.phone1 || '919932988615').replace(/[+\s-]/g, '')}?text=${encodeURIComponent(contactData.whatsappPrefill || "Hello SHREE NATHJI TRANSPORT, I want transport service information.")}`}
+        href={`https://wa.me/917001981725?text=${encodeURIComponent(contactData.whatsappPrefill || "Hello SHREE NATHJI TRANSPORT, I want transport service information.")}`}
         target="_blank"
         rel="noopener noreferrer"
         className="w-12 h-12 rounded-full bg-[#25d366] text-white shadow-[0_4px_14px_rgba(37,211,102,0.4)] flex items-center justify-center border border-[#34e073]/20 transition-all duration-300 hover:scale-105 hover:-translate-y-1 relative"

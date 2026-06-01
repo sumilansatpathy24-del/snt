@@ -310,7 +310,7 @@ export default function Contact({ websiteData }) {
                     )}
                     <span className="text-white/10">|</span>
                     <a
-                      href={`https://wa.me/${(contactData.phone1 || '919932988615').replace(/[+\s-]/g, '')}?text=${encodeURIComponent(contactData.whatsappPrefill || "Hello SHREE NATHJI TRANSPORT, I want transport service information.")}`}
+                      href={`https://wa.me/917001981725?text=${encodeURIComponent(contactData.whatsappPrefill || "Hello SHREE NATHJI TRANSPORT, I want transport service information.")}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center text-[10px] md:text-xs font-bold text-brand-orange hover:text-brand-orangeLight transition-colors font-outfit tracking-wide uppercase"
