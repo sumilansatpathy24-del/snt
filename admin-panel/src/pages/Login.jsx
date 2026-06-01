@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Lock, User, Eye, EyeOff, Loader2, AlertCircle, LogIn } from 'lucide-react';
 import { login } from '../utils/storage';
+import { API_BASE_URL } from '../config/api';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ export default function Login() {
     }
     setLoading(true);
     try {
-      const response = await fetch('https://snt-server.onrender.com/api/admin/login', {
+      const response = await fetch(`${API_BASE_URL}/api/admin/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
