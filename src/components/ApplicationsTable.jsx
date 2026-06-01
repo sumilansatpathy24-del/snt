@@ -19,11 +19,17 @@ export default function ApplicationsTable({ applications = [] }) {
 
   // Filter application list
   const filteredApps = applications.filter((app) => {
+    if (!app) return false;
+    const name = app.name || '';
+    const email = app.email || '';
+    const phone = app.phone || '';
+    const message = app.message || app.coverLetter || '';
+
     const matchesSearch = 
-      app.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      app.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      app.phone.includes(searchTerm) ||
-      (app.message && app.message.toLowerCase().includes(searchTerm.toLowerCase()));
+      name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      email.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      phone.includes(searchTerm) ||
+      message.toLowerCase().includes(searchTerm.toLowerCase());
     
     const matchesPosition = 
       selectedPosition === 'All Positions' || app.position === selectedPosition;

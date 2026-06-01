@@ -19,11 +19,17 @@ export default function InquiriesTable({ inquiries = [] }) {
 
   // Filter inquiry list
   const filteredInqs = inquiries.filter((inq) => {
+    if (!inq) return false;
+    const name = inq.name || '';
+    const email = inq.email || '';
+    const phone = inq.phone || '';
+    const message = inq.message || '';
+
     const matchesSearch = 
-      inq.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      inq.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      inq.phone.includes(searchTerm) ||
-      inq.message.toLowerCase().includes(searchTerm.toLowerCase());
+      name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      email.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      phone.includes(searchTerm) ||
+      message.toLowerCase().includes(searchTerm.toLowerCase());
     
     const matchesService = 
       selectedService === 'All Services' || inq.service === selectedService;
