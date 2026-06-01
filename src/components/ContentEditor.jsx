@@ -60,7 +60,7 @@ export default function ContentEditor({ websiteData, updateWebsiteData }) {
     formData.append('image', file);
 
     try {
-      const res = await fetch('/api/admin/upload-media', {
+      const res = await fetch('https://snt-server.onrender.com/api/admin/upload-media', {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${token}` },
         body: formData
@@ -72,6 +72,9 @@ export default function ContentEditor({ websiteData, updateWebsiteData }) {
       } catch (jsonErr) {
         throw new Error('Invalid server response');
       }
+
+      console.log('response.status:', res.status);
+      console.log('response.data:', data);
 
       if (!res.ok) {
         throw new Error(data.message || data.error || 'Upload failed');
@@ -223,7 +226,7 @@ export default function ContentEditor({ websiteData, updateWebsiteData }) {
                   <div className="flex flex-col sm:flex-row items-center gap-4">
                     {tempData.hero?.bgImage && (
                       <div className="w-24 h-16 rounded-lg overflow-hidden border border-white/10 bg-brand-navy flex-shrink-0">
-                        <img src={tempData.hero.bgImage} className="w-full h-full object-cover" alt="Hero Bg" />
+                        <img src={tempData.hero.bgImage?.startsWith('/uploads') ? `https://snt-server.onrender.com${tempData.hero.bgImage}` : tempData.hero.bgImage} className="w-full h-full object-cover" alt="Hero Bg" />
                       </div>
                     )}
                     <div className="flex-grow w-full relative">
@@ -428,7 +431,7 @@ export default function ContentEditor({ websiteData, updateWebsiteData }) {
                   <div className="flex flex-col sm:flex-row items-center gap-4">
                     {tempData.about?.image && (
                       <div className="w-24 h-16 rounded-lg overflow-hidden border border-white/10 bg-brand-navy flex-shrink-0">
-                        <img src={tempData.about.image} className="w-full h-full object-cover" alt="About img" />
+                        <img src={tempData.about.image?.startsWith('/uploads') ? `https://snt-server.onrender.com${tempData.about.image}` : tempData.about.image} className="w-full h-full object-cover" alt="About img" />
                       </div>
                     )}
                     <div className="flex-grow w-full relative">

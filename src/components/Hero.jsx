@@ -47,7 +47,7 @@ export default function Hero({ websiteData }) {
         className="absolute inset-0 w-full h-[120%] -top-[10%] z-0"
       >
         <img 
-          src={heroData.bgImage || "/images/hero_truck_bg.png"} 
+          src={heroData.bgImage?.startsWith('/uploads') ? `https://snt-server.onrender.com${heroData.bgImage}` : (heroData.bgImage || "/images/hero_truck_bg.png")} 
           alt="Cinematic industrial transport truck on the road" 
           className="w-full h-full object-cover object-center filter brightness-[0.7]"
         />

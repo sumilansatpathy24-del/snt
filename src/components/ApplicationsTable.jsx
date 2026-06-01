@@ -177,7 +177,7 @@ export default function ApplicationsTable({ applications = [] }) {
                               </button>
 
                               <a
-                                href={app.resumeUrl || app.resume_path}
+                                href={(app.resumeUrl || app.resume_path)?.startsWith('/uploads') ? `https://snt-server.onrender.com${app.resumeUrl || app.resume_path}` : (app.resumeUrl || app.resume_path)}
                                 download={app.resumeName || `Resume_${app.name.replace(/\s+/g, '_')}.pdf`}
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -272,7 +272,7 @@ export default function ApplicationsTable({ applications = [] }) {
                     </button>
                     
                     <a
-                      href={app.resumeUrl || app.resume_path}
+                      href={(app.resumeUrl || app.resume_path)?.startsWith('/uploads') ? `https://snt-server.onrender.com${app.resumeUrl || app.resume_path}` : (app.resumeUrl || app.resume_path)}
                       download={app.resumeName || `Resume_${app.name.replace(/\s+/g, '_')}.pdf`}
                       target="_blank"
                       rel="noopener noreferrer"

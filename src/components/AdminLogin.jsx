@@ -19,7 +19,7 @@ export default function AdminLogin({ onLoginSuccess }) {
     setError('');
 
     try {
-      const res = await fetch('/api/admin/login', {
+      const res = await fetch('https://snt-server.onrender.com/api/admin/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
@@ -31,6 +31,9 @@ export default function AdminLogin({ onLoginSuccess }) {
       } catch (jsonErr) {
         throw new Error('Invalid server response');
       }
+
+      console.log('response.status:', res.status);
+      console.log('response.data:', data);
 
       if (!res.ok) {
         throw new Error(data.message || data.error || 'Authentication failed');

@@ -134,7 +134,7 @@ export default function Fleet({ websiteData }) {
                 {/* Image Section with Zoom */}
                 <div className="relative h-64 overflow-hidden bg-brand-lightnavy">
                   <img
-                    src={vehicle.image}
+                    src={vehicle.image?.startsWith('/uploads') ? `https://snt-server.onrender.com${vehicle.image}` : vehicle.image}
                     alt={vehicle.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                     loading="lazy"

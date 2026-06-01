@@ -26,15 +26,21 @@ export default function Gallery() {
   const fetchGallery = async () => {
     try {
       setLoading(true);
-      const response = await fetch('/api/gallery');
+      const response = await fetch('https://snt-server.onrender.com/api/gallery');
+
+      let data = [];
+      try {
+        data = await response.json();
+      } catch (jsonErr) {
+        throw new Error('Invalid server response');
+      }
+
+      console.log('response.status:', response.status);
+      console.log('response.data:', data);
 
       if (!response.ok) {
         throw new Error('API failed');
       }
-
-      const data = await response.json();
-
-      console.log('Fetched gallery data:', data);
 
       if (!Array.isArray(data)) {
         throw new Error('Invalid gallery response');
@@ -193,7 +199,7 @@ export default function Gallery() {
                 >
                   <div className="relative h-64 overflow-hidden bg-brand-navy">
                     <img
-                      src={img.imageUrl}
+                      src={img.imageUrl?.startsWith('/uploads') ? `https://snt-server.onrender.com${img.imageUrl}` : img.imageUrl}
                       alt={img.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                       loading="lazy"
@@ -263,7 +269,7 @@ export default function Gallery() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.25 }}
-                src={filteredImages[lightboxIndex].imageUrl}
+                src={filteredImages[lightboxIndex].imageUrl?.startsWith('/uploads') ? `https://snt-server.onrender.com${filteredImages[lightboxIndex].imageUrl}` : filteredImages[lightboxIndex].imageUrl}
                 alt={filteredImages[lightboxIndex].title}
                 className="max-w-full max-h-[75vh] object-contain rounded-lg border border-white/5"
               />

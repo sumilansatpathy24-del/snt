@@ -75,7 +75,7 @@ export default function GalleryManager({ galleryItems = [], onUploadSuccess, onD
     uploadData.append('image', imageFile);
 
     try {
-      const res = await fetch('/api/gallery/upload', {
+      const res = await fetch('https://snt-server.onrender.com/api/gallery/upload', {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${token}` },
         body: uploadData
@@ -87,6 +87,9 @@ export default function GalleryManager({ galleryItems = [], onUploadSuccess, onD
       } catch (jsonErr) {
         throw new Error('Invalid server response');
       }
+
+      console.log('response.status:', res.status);
+      console.log('response.data:', data);
 
       if (!res.ok) {
         throw new Error(data.message || data.error || 'Failed to upload photo');
@@ -121,7 +124,7 @@ export default function GalleryManager({ galleryItems = [], onUploadSuccess, onD
     }
 
     try {
-      const res = await fetch(`/api/gallery/${id}`, {
+      const res = await fetch(`https://snt-server.onrender.com/api/gallery/${id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });
@@ -130,6 +133,9 @@ export default function GalleryManager({ galleryItems = [], onUploadSuccess, onD
       try {
         data = await res.json();
       } catch (jsonErr) {}
+
+      console.log('response.status:', res.status);
+      console.log('response.data:', data);
 
       if (!res.ok) {
         throw new Error(data.message || data.error || 'Failed to delete photo');
@@ -294,7 +300,7 @@ export default function GalleryManager({ galleryItems = [], onUploadSuccess, onD
                 >
                   <div className="relative h-28 overflow-hidden bg-brand-navy">
                     <img
-                      src={item.imageUrl}
+                      src={item.imageUrl?.startsWith('/uploads') ? `https://snt-server.onrender.com${item.imageUrl}` : item.imageUrl}
                       alt={item.title}
                       className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-300"
                       loading="lazy"

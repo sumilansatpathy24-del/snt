@@ -110,7 +110,7 @@ export default function Career() {
     uploadData.append('resume', resume);
 
     try {
-      const res = await fetch('/api/careers/apply', {
+      const res = await fetch('https://snt-server.onrender.com/api/careers/apply', {
         method: 'POST',
         body: uploadData
       });
@@ -121,6 +121,9 @@ export default function Career() {
       } catch (jsonErr) {
         throw new Error('Invalid server response');
       }
+
+      console.log('response.status:', res.status);
+      console.log('response.data:', data);
 
       if (!res.ok) {
         throw new Error(data.message || data.error || 'Failed to submit application');

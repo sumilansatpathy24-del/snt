@@ -68,33 +68,39 @@ export default function AdminDashboard({ setCurrentPage = () => {}, websiteData,
       const headers = { 'Authorization': `Bearer ${token}` };
 
       // Load gallery (non-protected API)
-      const resG = await fetch('/api/gallery');
+      const resG = await fetch('https://snt-server.onrender.com/api/gallery');
+      let dataG = [];
+      try {
+        dataG = await resG.json();
+      } catch (e) {}
+      console.log('response.status:', resG.status);
+      console.log('response.data:', dataG);
       if (resG.ok) {
-        let dataG = {};
-        try {
-          dataG = await resG.json();
-        } catch (e) {}
         setGalleryItems(dataG || []);
       }
 
       if (activeTab === 'overview' || activeTab === 'applications') {
-        const resA = await fetch('/api/careers');
+        const resA = await fetch('https://snt-server.onrender.com/api/careers');
+        let dataA = [];
+        try {
+          dataA = await resA.json();
+        } catch (e) {}
+        console.log('response.status:', resA.status);
+        console.log('response.data:', dataA);
         if (resA.ok) {
-          let dataA = {};
-          try {
-            dataA = await resA.json();
-          } catch (e) {}
           setApplications(dataA || []);
         }
       }
 
       if (activeTab === 'overview' || activeTab === 'inquiries') {
-        const resI = await fetch('/api/admin/inquiries', { headers });
+        const resI = await fetch('https://snt-server.onrender.com/api/admin/inquiries', { headers });
+        let dataI = {};
+        try {
+          dataI = await resI.json();
+        } catch (e) {}
+        console.log('response.status:', resI.status);
+        console.log('response.data:', dataI);
         if (resI.ok) {
-          let dataI = {};
-          try {
-            dataI = await resI.json();
-          } catch (e) {}
           setInquiries(dataI.inquiries || []);
         }
       }

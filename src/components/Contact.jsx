@@ -61,7 +61,7 @@ export default function Contact({ websiteData }) {
     setIsSubmitting(true);
 
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch('https://snt-server.onrender.com/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -75,6 +75,9 @@ export default function Contact({ websiteData }) {
       } catch (jsonErr) {
         throw new Error('Invalid server response');
       }
+
+      console.log('response.status:', res.status);
+      console.log('response.data:', data);
 
       if (!res.ok) {
         throw new Error(data.message || data.error || 'Failed to submit inquiry');
