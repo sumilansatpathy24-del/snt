@@ -77,10 +77,19 @@ export default function Navbar({ currentPage = 'main', setCurrentPage = () => {}
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 ${
-          isScrolled
-            ? 'glass-panel bg-brand-dark/95 border-b border-white/5 py-4 shadow-xl'
-            : 'bg-transparent py-6'
+        style={
+          isScrolled 
+            ? { 
+                zIndex: 9999, 
+                background: 'rgba(5, 10, 25, 0.85)', 
+                backdropFilter: 'blur(12px)', 
+                WebkitBackdropFilter: 'blur(12px)', 
+                borderBottom: '1px solid rgba(255, 255, 255, 0.08)' 
+              } 
+            : { zIndex: 9999 }
+        }
+        className={`fixed top-0 left-0 w-full transition-all duration-300 ${
+          isScrolled ? 'py-4 shadow-xl' : 'bg-transparent py-6'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
