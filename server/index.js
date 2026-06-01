@@ -434,7 +434,7 @@ app.post('/api/admin/login', (req, res, next) => {
   const { username, password } = req.body;
   
   const expectedUser = process.env.ADMIN_USER || 'admin';
-  const expectedPass = process.env.ADMIN_PASS || 'nathji2026';
+  const expectedPass = process.env.ADMIN_PASS || 'admin123';
 
   if (username === expectedUser && password === expectedPass) {
     console.log(`[Admin Login]: Admin logged in successfully.`);
