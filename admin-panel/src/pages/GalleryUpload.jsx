@@ -32,7 +32,7 @@ export default function GalleryUpload() {
   const loadGallery = async () => {
     try {
       setLoading(true);
-      const response = await fetch('/api/gallery');
+      const response = await fetch('https://snt-server.onrender.com/api/gallery');
       if (!response.ok) throw new Error('API failed');
       
       const data = await response.json();
@@ -102,7 +102,7 @@ export default function GalleryUpload() {
       formData.append('category', selectedCategory);
       formData.append('image', file);
 
-      const res = await fetch('/api/gallery/upload', {
+      const res = await fetch('https://snt-server.onrender.com/api/gallery/upload', {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${token}` },
         body: formData
@@ -157,7 +157,7 @@ export default function GalleryUpload() {
     
     try {
       const token = localStorage.getItem('adminToken') || 'admin-session-token-2026';
-      const res = await fetch(`/api/gallery/${id}`, {
+      const res = await fetch(`https://snt-server.onrender.com/api/gallery/${id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });
@@ -347,7 +347,7 @@ export default function GalleryUpload() {
                     >
                       <div className="relative h-28 overflow-hidden bg-brand-navy">
                         <img
-                          src={item.imageUrl || item.url}
+                          src={item.imageUrl ? (item.imageUrl.startsWith('http') ? item.imageUrl : `https://snt-server.onrender.com${item.imageUrl}`) : (item.url ? (item.url.startsWith('http') ? item.url : `https://snt-server.onrender.com${item.url}`) : '')}
                           alt={item.title}
                           className="w-full h-full object-cover transition-transform group-hover:scale-105 duration-300"
                           loading="lazy"

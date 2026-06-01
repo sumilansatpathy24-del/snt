@@ -19,13 +19,31 @@ export default function Login() {
       return;
     }
     setLoading(true);
-    await new Promise(r => setTimeout(r, 600));
-    const ok = login(form.username, form.password);
-    setLoading(false);
-    if (ok) {
-      navigate('/', { replace: true });
-    } else {
-      setError('Invalid credentials. Try admin / admin123');
+    try {
+      const response = await fetch('https://snt-server.onrender.com/api/admin/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          username: form.username,
+          password: form.password
+        })
+      });
+      const data = await response.json();
+      setLoading(false);
+      
+      if (response.ok && data.success) {
+        localStorage.setItem('snt_admin_auth', JSON.stringify({ username: form.username, loggedInAt: Date.now() }));
+        localStorage.setItem('adminToken', data.token);
+        navigate('/', { replace: true });
+      } else {
+        setError(data.message || 'Invalid username or password.');
+      }
+    } catch (err) {
+      console.error('Login error:', err);
+      setLoading(false);
+      setError('Failed to connect to backend server.');
     }
   };
 
