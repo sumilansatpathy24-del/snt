@@ -21,13 +21,13 @@ export const initialWebsiteData = {
     bullet3: "Dedicated Dumpers & Trippers",
     bullet4: "High Safety & Fleet Standards",
     stat1_val: "60",
-    stat1_desc: "Well-maintained dumpers & trippers",
+    stat1_desc: "Modern dumpers and tippers",
     stat2_val: "13",
-    stat2_desc: "Reliable transport services since 2013",
-    stat3_val: "41",
-    stat3_desc: "Robust financial growth in FY 2025-26",
+    stat2_desc: "Serving industry since 2013",
+    stat3_val: "24",
+    stat3_desc: "Round-the-clock transport support",
     stat4_val: "100",
-    stat4_desc: "Preferred partner for industry leaders"
+    stat4_desc: "High operational and fleet safety standards"
   },
   services: {
     subtitle: "What We Deliver",
@@ -110,12 +110,12 @@ export const initialWebsiteData = {
     clienteleTitle: "Trusted by Industry Leaders",
     clienteleDesc: "We have a proven track record of delivering reliable transportation solutions to some of the industry's most respected names.",
     partner: {
-      tag: "Key Client Partner",
-      name: "Rashmi Group of Industries",
-      desc: "We are the largest internal transport partner for Rashmi Group, providing over 95 dumpers for the continuous shifting of raw materials (iron ore, pellets, coal, slag). In the last financial year, our services accounted for approximately ₹21+ Crore in billing. We also manage the transport of sand for their DI Pipe plant (approx. ₹6+ Crore in recent months) and provide sand and stone chips for their construction projects (approx. ₹5+ Crore in the last financial year).",
-      billing: "₹21 Cr+",
-      label: "Annual Billing",
-      subLabel: "+ ₹11 Cr in recent projects"
+      tag: "L1 CATEGORY TRANSPORT PARTNER",
+      name: "Rashmi Metallics Limited",
+      desc: "Proud transportation partner of Rashmi Metallics Limited, providing dedicated support for raw material movement, plant logistics, industrial transportation, and bulk material handling operations. Our focus remains on timely service, operational efficiency, safety, and dependable logistics support for large-scale industrial requirements.",
+      billing: "",
+      label: "",
+      subLabel: ""
     }
   },
   contact: {

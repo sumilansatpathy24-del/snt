@@ -63,12 +63,12 @@ export default function Fleet({ websiteData }) {
   const title2 = titleParts[1] || '';
 
   const partner = fleetData.partner || {
-    tag: "Key Client Partner",
-    name: "Rashmi Group of Industries",
-    desc: "We are the largest internal transport partner for Rashmi Group...",
-    billing: "₹21 Cr+",
-    label: "Annual Billing",
-    subLabel: "+ ₹11 Cr in recent projects"
+    tag: "L1 CATEGORY TRANSPORT PARTNER",
+    name: "Rashmi Metallics Limited",
+    desc: "Proud transportation partner of Rashmi Metallics Limited, providing dedicated support for raw material movement, plant logistics, industrial transportation, and bulk material handling operations. Our focus remains on timely service, operational efficiency, safety, and dependable logistics support for large-scale industrial requirements.",
+    billing: "",
+    label: "",
+    subLabel: ""
   };
 
   return (
@@ -180,29 +180,16 @@ export default function Fleet({ websiteData }) {
 
           {/* Key Partnership Card - Rashmi Group */}
           <div className="glass-panel p-6 md:p-8 rounded-2xl border border-brand-orange/20 shadow-glow-orange max-w-4xl mx-auto">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-              <div className="space-y-3 md:max-w-2xl">
-                <span className="inline-block bg-brand-orange/10 border border-brand-orange/30 text-brand-orange px-3 py-1 rounded-md font-outfit text-xs font-bold uppercase tracking-wider">
-                  {partner.tag || "Key Client Partner"}
-                </span>
-                <h3 className="font-outfit font-extrabold text-xl md:text-2xl text-white">
-                  {partner.name || "Rashmi Group of Industries"}
-                </h3>
-                <p className="text-slate-300 font-inter text-sm leading-relaxed">
-                  {partner.desc || "We are the largest internal transport partner for Rashmi Group, providing over 95 dumpers for the continuous shifting of raw materials (iron ore, pellets, coal, slag)."}
-                </p>
-              </div>
-              <div className="flex-shrink-0 bg-brand-lightnavy p-5 rounded-xl border border-white/5 text-center min-w-[200px] flex flex-col justify-center">
-                <span className="text-brand-orange font-outfit font-black text-3xl md:text-4xl block">
-                  {partner.billing || "₹21 Cr+"}
-                </span>
-                <span className="text-slate-400 font-outfit text-xs font-bold uppercase tracking-wider block mt-1">
-                  {partner.label || "Annual Billing"}
-                </span>
-                <span className="text-slate-500 font-inter text-[10px] mt-2 block">
-                  {partner.subLabel || "+ ₹11 Cr in recent projects"}
-                </span>
-              </div>
+            <div className="space-y-3">
+              <span className="inline-block bg-brand-orange/10 border border-brand-orange/30 text-brand-orange px-3 py-1 rounded-md font-outfit text-xs font-bold uppercase tracking-wider">
+                {partner.tag || "L1 CATEGORY TRANSPORT PARTNER"}
+              </span>
+              <h3 className="font-outfit font-extrabold text-xl md:text-2xl text-white">
+                {partner.name || "Rashmi Metallics Limited"}
+              </h3>
+              <p className="text-slate-300 font-inter text-sm leading-relaxed max-w-3xl">
+                {partner.desc || "Proud transportation partner of Rashmi Metallics Limited, providing dedicated support for raw material movement, plant logistics, industrial transportation, and bulk material handling operations. Our focus remains on timely service, operational efficiency, safety, and dependable logistics support for large-scale industrial requirements."}
+              </p>
             </div>
           </div>
 

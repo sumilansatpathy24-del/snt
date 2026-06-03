@@ -23,9 +23,9 @@ const coreFeatures = [
     desc: 'Providing premium transportation and bulk material supply solutions for industrial and construction sectors since 2013.',
   },
   {
-    title: 'Robust Financial Growth',
+    title: 'Operational Excellence',
     icon: Landmark,
-    desc: 'Reflecting high operational capacity with solid financial growth, reaching ₹41.05 Crore in annual billing.',
+    desc: 'Delivering dependable transportation solutions through disciplined fleet management, experienced operators, and strong execution capabilities.',
   },
   {
     title: 'Trusted Partnerships',
