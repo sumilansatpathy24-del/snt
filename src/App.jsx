@@ -23,8 +23,12 @@ export default function App() {
     if (stored) {
       try {
         const parsed = JSON.parse(stored);
-        // Always use latest hero defaults from initialWebsiteData
-        const merged = { ...parsed, hero: { ...initialWebsiteData.hero } };
+        // Always use latest hero and footer defaults from initialWebsiteData
+        const merged = { 
+          ...parsed, 
+          hero: { ...initialWebsiteData.hero },
+          footer: { ...parsed.footer, aboutDesc: initialWebsiteData.footer.aboutDesc }
+        };
         localStorage.setItem('snt_website_data', JSON.stringify(merged));
         return merged;
       } catch (e) {

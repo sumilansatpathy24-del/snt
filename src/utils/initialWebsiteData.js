@@ -10,7 +10,7 @@ export const initialWebsiteData = {
   },
   about: {
     subtitle: "Reliable Transport Service Provider",
-    title: "Pioneering Safe & Swift Freight Cargo Systems",
+    title: "Trusted Partner for Industrial Transport &\nBulk Material Movement",
     description1: "Shree Nathji Transport is a leading provider of comprehensive industrial transportation and construction material supply services. We specialize in internal plant transportation, factory-to-factory transport, industrial and commercial land filling, bulk material supply, and dust and waste transportation.",
     description2: "Our mission is to deliver seamless, reliable, and cost-effective transportation services that meet the highest standards of safety and efficiency. We aim to be the preferred transport partner known for our unwavering commitment to quality and client satisfaction.",
     floatingStatTitle: "Established 2013",
@@ -26,8 +26,8 @@ export const initialWebsiteData = {
     stat2_desc: "Serving industry since 2013",
     stat3_val: "24",
     stat3_desc: "Round-the-clock transport support",
-    stat4_val: "100",
-    stat4_desc: "High operational and fleet safety standards"
+    stat4_val: "110",
+    stat4_desc: "Own Fleet & Attached Vehicles"
   },
   services: {
     subtitle: "What We Deliver",
@@ -138,7 +138,7 @@ export const initialWebsiteData = {
   },
   footer: {
     aboutTitle: "SHREE NATHJI TRANSPORT",
-    aboutDesc: "Pioneering safe, swift, and cost-effective bulk transportation tipper systems for heavy manufacturing complexes and infrastructure roadworks across Pan India.",
+    aboutDesc: "Trusted partner for industrial transport, bulk material movement, and infrastructure logistics across India. We provide reliable tipper transportation solutions for manufacturing plants, steel industries, construction projects, and large-scale industrial operations with a strong focus on safety, efficiency, and timely delivery.",
     copyrightText: "© 2026 SHREE NATHJI TRANSPORT. All rights reserved."
   }
 };

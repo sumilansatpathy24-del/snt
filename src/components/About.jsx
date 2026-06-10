@@ -44,7 +44,7 @@ export default function About({ websiteData }) {
   const stats = [
     {
       id: 1,
-      title: 'Fleet Units',
+      title: 'Own Fleet',
       value: aboutData.stat1_val || '60',
       suffix: '+',
       desc: aboutData.stat1_desc || 'Modern dumpers and tippers',
@@ -68,16 +68,16 @@ export default function About({ websiteData }) {
     },
     {
       id: 4,
-      title: 'Safety Compliant',
-      value: aboutData.stat4_val || '100',
-      suffix: '%',
-      desc: aboutData.stat4_desc || 'High operational and fleet safety standards',
+      title: 'Fleet Units',
+      value: aboutData.stat4_val || '110',
+      suffix: '+',
+      desc: aboutData.stat4_desc || 'Own Fleet & Attached Vehicles',
       icon: Navigation,
     },
   ];
 
   // Parse title into line1 and line2
-  const rawTitle = aboutData.title || "Pioneering Safe & Swift\nFreight Cargo Systems";
+  const rawTitle = aboutData.title || "Trusted Partner for Industrial Transport &\nBulk Material Movement";
   const titleParts = rawTitle.split('\n');
   const title1 = titleParts[0];
   const title2 = titleParts[1] || '';

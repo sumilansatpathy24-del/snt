@@ -178,18 +178,51 @@ export default function Fleet({ websiteData }) {
             </p>
           </div>
 
-          {/* Key Partnership Card - Rashmi Group */}
-          <div className="glass-panel p-6 md:p-8 rounded-2xl border border-brand-orange/20 shadow-glow-orange max-w-4xl mx-auto">
-            <div className="space-y-3">
-              <span className="inline-block bg-brand-orange/10 border border-brand-orange/30 text-brand-orange px-3 py-1 rounded-md font-outfit text-xs font-bold uppercase tracking-wider">
-                {partner.tag || "L1 CATEGORY TRANSPORT PARTNER"}
-              </span>
-              <h3 className="font-outfit font-extrabold text-xl md:text-2xl text-white">
-                {partner.name || "Rashmi Metallics Limited"}
-              </h3>
-              <p className="text-slate-300 font-inter text-sm leading-relaxed max-w-3xl">
-                {partner.desc || "Proud transportation partner of Rashmi Metallics Limited, providing dedicated support for raw material movement, plant logistics, industrial transportation, and bulk material handling operations. Our focus remains on timely service, operational efficiency, safety, and dependable logistics support for large-scale industrial requirements."}
-              </p>
+          {/* Premium Clients Stack */}
+          <div className="space-y-6 max-w-4xl mx-auto">
+            {/* Key Partnership Card - Rashmi Group */}
+            <div className="glass-panel p-6 md:p-8 rounded-2xl border border-brand-orange/20 shadow-glow-orange transition-all duration-300 hover:border-brand-orange/40">
+              <div className="space-y-3">
+                <span className="inline-block bg-brand-orange/10 border border-brand-orange/30 text-brand-orange px-3 py-1 rounded-md font-outfit text-xs font-bold uppercase tracking-wider">
+                  {partner.tag || "L1 CATEGORY TRANSPORT PARTNER"}
+                </span>
+                <h3 className="font-outfit font-extrabold text-xl md:text-2xl text-white">
+                  {partner.name || "Rashmi Metallics Limited"}
+                </h3>
+                <p className="text-slate-300 font-inter text-sm leading-relaxed max-w-3xl">
+                  {partner.desc || "Proud transportation partner of Rashmi Metallics Limited, providing dedicated support for raw material movement, plant logistics, industrial transportation, and bulk material handling operations. Our focus remains on timely service, operational efficiency, safety, and dependable logistics support for large-scale industrial requirements."}
+                </p>
+              </div>
+            </div>
+
+            {/* Key Partnership Card - Shyam SEL & Power Ltd. */}
+            <div className="glass-panel p-6 md:p-8 rounded-2xl border border-brand-orange/20 shadow-glow-orange transition-all duration-300 hover:border-brand-orange/40">
+              <div className="space-y-3">
+                <span className="inline-block bg-brand-orange/10 border border-brand-orange/30 text-brand-orange px-3 py-1 rounded-md font-outfit text-xs font-bold uppercase tracking-wider">
+                  PREMIUM CLIENT PARTNER
+                </span>
+                <h3 className="font-outfit font-extrabold text-xl md:text-2xl text-white">
+                  Shyam SEL & Power Ltd.
+                </h3>
+                <p className="text-slate-300 font-inter text-sm leading-relaxed max-w-3xl">
+                  Providing dedicated plant-to-plant logistics solutions for Shyam SEL & Power Ltd., supporting raw material movement between Kharagpur, Ramsarup , Jamuria and associated plant locations, including the transportation of sponge iron, pellets, charcoal, coke, silico manganese and other industrial materials.
+                </p>
+              </div>
+            </div>
+
+            {/* Key Partnership Card - Ramsarup Industries Ltd. */}
+            <div className="glass-panel p-6 md:p-8 rounded-2xl border border-brand-orange/20 shadow-glow-orange transition-all duration-300 hover:border-brand-orange/40">
+              <div className="space-y-3">
+                <span className="inline-block bg-brand-orange/10 border border-brand-orange/30 text-brand-orange px-3 py-1 rounded-md font-outfit text-xs font-bold uppercase tracking-wider">
+                  PREMIUM CLIENT PARTNER
+                </span>
+                <h3 className="font-outfit font-extrabold text-xl md:text-2xl text-white">
+                  Ramsarup Industries Ltd.
+                </h3>
+                <p className="text-slate-300 font-inter text-sm leading-relaxed max-w-3xl">
+                  Providing reliable transportation support for Ramsarup Industries Ltd., handling bulk movement of sand, stone chips, land-filling materials and other construction-related cargo for industrial and infrastructure projects.
+                </p>
+              </div>
             </div>
           </div>
 
@@ -202,20 +235,18 @@ export default function Fleet({ websiteData }) {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               {[
                 { name: 'Ashoka Buildcon Limited', desc: 'Entrusted with transportation of pond ash from DVC Andal (Durgapur) to their six-lane NH-19 road project site.' },
-                { name: 'Shyam Sel & Power Ltd.', desc: 'Trusted partner for metal and power sector industrial transportation.' },
-                { name: 'Ramsarup Industries Ltd.', desc: 'Providing consistent raw material shifting and transport support.' },
                 { name: 'Naveen Merico Engineering Co. Pvt. Ltd.', desc: 'Engineering project material supply and transport partner.' },
-                { name: 'MSP Metallics Pvt Ltd.', desc: 'Internal plant raw materials transportation provider.' },
+                { name: 'MSP Metallics Pvt. Ltd.', desc: 'Internal plant raw materials transportation provider.' },
                 { name: 'Shyam Steel Manufacturing Ltd.', desc: 'Bulk construction material supply and steel transport services.' },
                 { name: 'Bengal Energy Ltd.', desc: 'Industrial waste, dust and bulk energy supply chain services.' },
                 { name: 'Radix Infracon Pvt. Ltd.', desc: 'Infrastructure and commercial filling materials delivery.' },
                 { name: 'Jai Balaji Group', desc: 'Heavy fleet shifting and bulk material transportation.' },
-                { name: 'Giridhan Metal Pvt Ltd.', desc: 'Reliable industrial transport support for minerals and metals.' }
+                { name: 'Giridhan Metal Pvt. Ltd.', desc: 'Reliable industrial transport support for minerals and metals.' }
               ].map((client) => (
-                <div key={client.name} className="glass-panel p-5 rounded-xl border border-white/5 hover:border-brand-orange/10 transition-colors duration-300">
-                  <h5 className="font-outfit font-bold text-base text-white mb-1.5">{client.name}</h5>
-                  <p className="text-xs text-slate-400 font-inter leading-relaxed">{client.desc}</p>
-                </div>
+                  <div key={client.name} className="h-full flex flex-col glass-panel p-5 rounded-xl border border-white/5 hover:border-brand-orange/10 transition-colors duration-300">
+                    <h5 className="font-outfit font-bold text-base text-white mb-1.5">{client.name}</h5>
+                    <p className="text-xs text-slate-400 font-inter leading-relaxed">{client.desc}</p>
+                  </div>
               ))}
             </div>
           </div>

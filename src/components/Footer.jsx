@@ -46,7 +46,7 @@ export default function Footer({ websiteData, currentPage, setCurrentPage }) {
             </a>
             
             <p className="text-slate-400 font-inter text-sm leading-relaxed max-w-sm">
-              {footerData.aboutDesc || "Shree Nathji Transport is a leading provider of comprehensive industrial transportation and construction material supply services."}
+              {footerData.aboutDesc || "Trusted partner for industrial transport, bulk material movement, and infrastructure logistics across India. We provide reliable tipper transportation solutions for manufacturing plants, steel industries, construction projects, and large-scale industrial operations with a strong focus on safety, efficiency, and timely delivery."}
             </p>
 
             <div className="flex space-x-3.5">
